@@ -13,22 +13,24 @@ curl -fsSL https://raw.githubusercontent.com/mvanduijker/knap-cli/main/install.s
 
 ### mise
 
-The released binary is called `knap` while the repo is `knap-cli`, so tell
-[mise](https://mise.jdx.dev) which executable to pick:
-
 ```sh
-mise use -g "ubi:mvanduijker/knap-cli[exe=knap]"
+mise use -g github:mvanduijker/knap-cli
 ```
 
 Or pin it in a project's `mise.toml`:
 
 ```toml
 [tools]
-"ubi:mvanduijker/knap-cli" = { version = "latest", exe = "knap" }
+"github:mvanduijker/knap-cli" = "latest"
 ```
 
-The `ubi` backend downloads the release archive, so there is no Go toolchain
-involved. Upgrade with `mise up ubi:mvanduijker/knap-cli`.
+The `github` backend downloads the release archive and picks up the `knap`
+binary inside it, so no Go toolchain is involved and the repo being called
+`knap-cli` does not matter. Upgrade with `mise up github:mvanduijker/knap-cli`.
+
+Use the `github` backend rather than `ubi`: `ubi` matches files against the
+repo name, so it would look for `knap-cli` in an archive that contains `knap`,
+and mise deprecated it in 2026 anyway.
 
 ### From source
 
