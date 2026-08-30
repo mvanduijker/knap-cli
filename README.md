@@ -11,13 +11,33 @@ the server's message on stderr when something goes wrong.
 curl -fsSL https://raw.githubusercontent.com/mvanduijker/knap-cli/main/install.sh | sh
 ```
 
-Or:
+### mise
+
+The released binary is called `knap` while the repo is `knap-cli`, so tell
+[mise](https://mise.jdx.dev) which executable to pick:
 
 ```sh
-brew install mvanduijker/tap/knap
-mise use -g go:github.com/mvanduijker/knap-cli@latest
+mise use -g "ubi:mvanduijker/knap-cli[exe=knap]"
+```
+
+Or pin it in a project's `mise.toml`:
+
+```toml
+[tools]
+"ubi:mvanduijker/knap-cli" = { version = "latest", exe = "knap" }
+```
+
+The `ubi` backend downloads the release archive, so there is no Go toolchain
+involved. Upgrade with `mise up ubi:mvanduijker/knap-cli`.
+
+### From source
+
+```sh
 go install github.com/mvanduijker/knap-cli@latest
 ```
+
+Go names the binary after the module, so this one lands as `knap-cli`. Rename
+it, or use one of the routes above if you want `knap`.
 
 ## Log in
 
