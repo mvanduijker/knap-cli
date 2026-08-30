@@ -1,0 +1,10 @@
+[tools]
+go = "1.27"
+
+[tasks.test]
+description = "Run the test suite"
+run = "go test ./..."
+
+[tasks.build]
+description = "Build the knap binary into ./dist"
+run = "go build -o dist/knap ."
