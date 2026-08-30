@@ -7,4 +7,4 @@ run = "go test ./..."
 
 [tasks.build]
 description = "Build the knap binary into ./dist"
-run = "go build -o dist/knap ."
+run = "go build -o dist/knap ./cmd/knap"

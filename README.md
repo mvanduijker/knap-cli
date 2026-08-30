@@ -35,11 +35,8 @@ and mise deprecated it in 2026 anyway.
 ### From source
 
 ```sh
-go install github.com/mvanduijker/knap-cli@latest
+go install github.com/mvanduijker/knap-cli/cmd/knap@latest
 ```
-
-Go names the binary after the module, so this one lands as `knap-cli`. Rename
-it, or use one of the routes above if you want `knap`.
 
 ## Log in
 
@@ -153,7 +150,7 @@ Omitting `year` gives the current one. A year the account has no ledger for is a
 mise run test           # go test ./...
 mise run build          # dist/knap
 go test ./... -update   # rewrite the output golden files
-KNAP_API_URL=http://localhost:8000 go run . account list
+KNAP_API_URL=http://localhost:8000 go run ./cmd/knap account list
 ```
 
 ## License
