@@ -37,10 +37,17 @@ changelog:
       - "^test:"
       - "^chore:"
 
-brews:
-  - repository:
+# Needs a mvanduijker/homebrew-tap repo and a HOMEBREW_TAP_TOKEN secret.
+# Until both exist, keep skip_upload on so tagging still cuts a release.
+homebrew_casks:
+  - name: knap
+    binaries:
+      - knap
+    repository:
       owner: mvanduijker
       name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
     homepage: https://knap.app
     description: Manage your knap.app allowance accounts from the terminal
     license: MIT
+    skip_upload: true
