@@ -1,0 +1,14 @@
+{
+  "name": "knap",
+  "owner": {
+    "name": "Mark van Duijker",
+    "url": "https://github.com/mvanduijker"
+  },
+  "plugins": [
+    {
+      "name": "knap",
+      "source": "./",
+      "description": "Manage knap.app allowance accounts, transactions and ledgers from Claude Code."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "knap",
+  "description": "Read and change knap.app allowance accounts, transactions and ledgers through the knap CLI.",
+  "version": "0.0.1",
+  "author": {
+    "name": "Mark van Duijker",
+    "url": "https://github.com/mvanduijker"
+  },
+  "homepage": "https://knap.app",
+  "repository": "https://github.com/mvanduijker/knap-cli",
+  "license": "MIT"
+}

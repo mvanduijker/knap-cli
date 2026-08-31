@@ -83,6 +83,33 @@ account it can be left out entirely.
 
 Every command takes `--json` (the full payload) and `--quiet` (ids only).
 
+## Use it from Claude Code
+
+This repo is also a Claude Code plugin marketplace, so any session can talk to
+your allowance accounts:
+
+```
+/plugin marketplace add mvanduijker/knap-cli
+/plugin install knap@knap
+```
+
+That installs the `knap` skill. Claude picks it up on its own when the talk
+turns to allowance, or you can address it directly:
+
+```
+/knap deposit 5 euros on John's account for helping clean the car
+/knap what is the balance
+```
+
+Its full name is `/knap:knap` (`<plugin>:<skill>`); the bare `/knap` works
+unless another command has already claimed it.
+
+The `knap` binary and a token are still needed — the plugin drives the CLI, it
+does not replace it.
+
+Writes are restated (amount, direction, account) and confirmed before anything
+is recorded.
+
 ## API reference
 
 Base URL `https://knap.app`. Every request needs
